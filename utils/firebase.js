@@ -6,12 +6,19 @@ import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
 	apiKey: "AIzaSyCzQP3jcw-FLgCBm9iMgpDF7j0voUUpqjY",
-	authDomain: "events-c2e88.firebaseapp.com",
-	projectId: "events-c2e88",
-	storageBucket: "events-c2e88.appspot.com",
-	messagingSenderId: "638716242047",
-	appId: "1:638716242047:web:6cb6129b617dd9f0b9374a",
-	measurementId: "G-58CB8P0YBW"
+
+  authDomain: "events-c2e88.firebaseapp.com",
+
+  projectId: "events-c2e88",
+
+  storageBucket: "events-c2e88.appspot.com",
+
+  messagingSenderId: "638716242047",
+
+  appId: "1:638716242047:web:6cb6129b617dd9f0b9374a",
+
+  measurementId: "G-58CB8P0YBW"
+
 
 };
 
