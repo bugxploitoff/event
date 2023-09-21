@@ -5,20 +5,20 @@ import { getAuth } from "firebase/auth";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-	apiKey: "AIzaSyCzQP3jcw-FLgCBm9iMgpDF7j0voUUpqjY",
 
-  authDomain: "events-c2e88.firebaseapp.com",
+  apiKey: "AIzaSyAp0-FwaTTCA12BuqK1P-xk5bQ_4ug9PWU",
 
-  projectId: "events-c2e88",
+  authDomain: "chatapp-6a896.firebaseapp.com",
 
-  storageBucket: "events-c2e88.appspot.com",
+  databaseURL: "https://chatapp-6a896-default-rtdb.firebaseio.com",
 
-  messagingSenderId: "638716242047",
+  projectId: "chatapp-6a896",
 
-  appId: "1:638716242047:web:6cb6129b617dd9f0b9374a",
+  storageBucket: "chatapp-6a896.appspot.com",
 
-  measurementId: "G-58CB8P0YBW"
+  messagingSenderId: "505384455208",
 
+  appId: "1:505384455208:web:322c0149ec74fda73cf91d"
 
 };
 
