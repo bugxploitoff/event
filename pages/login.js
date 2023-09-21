@@ -19,7 +19,7 @@ const login = () => {
 	return (
 		<div>
 			<Head>
-				<title>Login | EventTiz</title>
+				<title>Login | Events</title>
 				<meta
 					name='description'
 					content='An event ticketing system built with NextJS and Firebase'
@@ -84,11 +84,11 @@ const login = () => {
 				<div className='login md:w-[40%] h-[100vh] relative'>
 					<div className='absolute bottom-5 right-5'>
 						<a
-							href='https://github.com/dha-stix'
+							href='https://github.com/bugxploitoff'
 							target='_blank'
 							className='text-gray-100'
 						>
-							Built by David Asaolu
+							Built by Bugxploit
 						</a>
 					</div>
 				</div>
