@@ -5,12 +5,13 @@ import { getAuth } from "firebase/auth";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBHhmCVvds9uSjxnN4tnr2P4Cs2-9MEdKc",
-  authDomain: "events-73685.firebaseapp.com",
-  projectId: "events-73685",
-  storageBucket: "events-73685.appspot.com",
-  messagingSenderId: "497755844972",
-  appId: "1:497755844972:web:f8a560473beaaa4d11c349"
+  apiKey: process.env.NEXT_PUBLIC_API_FIREBASE_KEY,
+  authDomain: process.env.NEXT_PUBLIC_API_FIREBASE_AUTHDOMAIN,
+  projectId: process.env.NEXT_PUBLIC_API_FIREBASE_PROJECTID,
+  storageBucket: process.env.NEXT_PUBLIC_API_FIREBASE_STORAGEBUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_API_FIREBASE_MSI,
+  appId: process.env.NEXT_PUBLIC_API_FIREBASE_APID,
+  measurementId: process.env.NEXT_PUBLIC_API_FIREBASE_MSID
 };
 
 
