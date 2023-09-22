@@ -121,7 +121,7 @@ const RegisterPage = ({ event }) => {
                 <div className='text-center'>
                   <p>Scan the QR code below to make the payment:</p>
                   <img
-                    src={`https://www.bhimupi.org.in/qr?pa=${event.upi}&pn=${event.title}&tn=Payment&am=${event.amount}&cu=INR`}
+                    src={`https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=upi://${event.upi}?amount=${event.amount}`}
                     alt='UPI QR Code'
                   />
                 </div>
