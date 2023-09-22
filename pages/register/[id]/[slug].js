@@ -123,6 +123,7 @@ const RegisterPage = ({ event }) => {
                   <img
                     src={`https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(`upi://pay?pa=${event.upi}&pn=${encodeURIComponent('pwnme')}&mc=&tr=${encodeURIComponent(trans)}&am=${event.amount}&cu=INR`)}`}
                     alt='UPI QR Code'
+                    style={{ display: 'block', margin: '0 auto', width: '300px', height: '300px' }}
                   />
                 </div>
 
