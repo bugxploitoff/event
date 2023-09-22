@@ -7,12 +7,6 @@
 
 <img width="1264" alt="Event ticketing system" src="https://github.com/dha-stix/eventtiz/assets/67129211/c7282244-6b1c-49e0-918e-1bfc1097a26c">
 
-## Live Demo
-[View Live Version](https://eventtiz.vercel.app)
-
-## How-to Guide
-[Read the article on Dev.to](https://dev.to/arshadayvid/how-i-built-an-event-ticketing-system-with-nextjs-and-firebase-50l2)
-
 ## Installation
 - Clone the project repository. Don't forget to star the repo 😉
 - Run `npm install` to install its dependencies.
