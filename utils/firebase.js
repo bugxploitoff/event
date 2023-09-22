@@ -5,16 +5,24 @@ import { getAuth } from "firebase/auth";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCR8K132C36Q-sL6lJ_6eLOjl8BBmrsTeQ",
-  authDomain: "events-6470c.firebaseapp.com",
-  databaseURL: "https://events-6470c-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "events-6470c",
-  storageBucket: "events-6470c.appspot.com",
-  messagingSenderId: "894616506442",
-  appId: "1:894616506442:web:773f5c41f38a8a0b6ed6b3",
-  measurementId: "G-BNW3EPGW3F"
-};
 
+  apiKey: "AIzaSyCVYA-hOK-5qhQ3Zwx3kPZCk5YkYSifv7M",
+
+  authDomain: "events-6470c.firebaseapp.com",
+
+  databaseURL: "https://events-6470c-default-rtdb.asia-southeast1.firebasedatabase.app",
+
+  projectId: "events-6470c",
+
+  storageBucket: "events-6470c.appspot.com",
+
+  messagingSenderId: "894616506442",
+
+  appId: "1:894616506442:web:951b29e12333dd316ed6b3",
+
+  measurementId: "G-BWNH1RH91G"
+
+};
 
 
 // Initialize Firebase
