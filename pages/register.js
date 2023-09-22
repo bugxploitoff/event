@@ -4,7 +4,6 @@ import Link from "next/link";
 import { HiMail } from "react-icons/hi";
 import { AiTwotoneLock, AiFillCheckCircle } from "react-icons/ai";
 import { firebaseCreateUser } from "../utils/util";
-import { sendEmailVerification } from "firebase/auth";
 import { useRouter } from "next/router";
 
 const register = () => {
@@ -16,7 +15,6 @@ const register = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		if (password === cpassword) {
-			sendEmailVerification(email);
 			firebaseCreateUser(email, password, router);
 			setEmail("");
 			setPassword("");
