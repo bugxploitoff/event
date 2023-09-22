@@ -1,5 +1,6 @@
 import {
 	signInWithEmailAndPassword,
+	sendEmailVerification,
 	signOut,
 	createUserWithEmailAndPassword,
 } from "firebase/auth";
@@ -144,19 +145,28 @@ export const errorMessage = (message) => {
 		theme: "light",
 	});
 };
-
 export const firebaseCreateUser = (email, password, router) => {
-	createUserWithEmailAndPassword(auth, email, password)
-		.then((userCredential) => {
-			const user = userCredential.user;
-			successMessage("Account created 🎉");
-			router.push("/login");
-		})
-		.catch((error) => {
-			console.error(error);
-			errorMessage("Account creation declined ❌");
-		});
+  createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      const user = userCredential.user;
+      
+      // Send a verification email to the user
+      sendEmailVerification(auth.currentUser)
+        .then(() => {
+          successMessage("Account created 🎉");
+          router.push("/login");
+        })
+        .catch((error) => {
+          console.error("Error sending verification email:", error);
+          errorMessage("Account creation declined ❌");
+        });
+    })
+    .catch((error) => {
+      console.error(error);
+      errorMessage("Account creation declined ❌");
+    });
 };
+
 export const firebaseLoginUser = (email, password, router) => {
 	signInWithEmailAndPassword(auth, email, password)
 		.then((userCredential) => {
