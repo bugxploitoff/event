@@ -125,18 +125,18 @@ const event = () => {
 								type='text'
 								className='border-[1px] py-2 px-4 rounded-md mb-3'
 								required
-								value={date}
+								value={upi}
 								onChange={(e) => setUpi(e.target.value)}
 							/>
 						</div>
 						<div className='w-1/2 flex flex-col'>
 							<label htmlFor='time'>Amount</label>
 							<input
-								name='anount'
+								name='amount'
 								type='number'
 								className='border-[1px] py-2 px-4 rounded-md mb-3'
 								required
-								value={time}
+								value={amount}
 								onChange={(e) => setAmount(e.target.value)}
 							/>
 						</div>
