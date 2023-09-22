@@ -119,12 +119,16 @@ const RegisterPage = ({ event }) => {
 
                 {/* UPI Payment QR Code */}
                 <div className='text-center'>
-                  <p>Scan the QR code below to make the payment:</p>
-                  <img
-                    src={`https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=upi://${event.upi}?amount=${event.amount}`}
-                    alt='UPI QR Code'
-                  />
-                </div>
+  <p>Scan the QR code below to make the payment:</p>
+  <div style={{ textAlign: 'center' }}>
+    <img
+      src={`https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=upi://${event.upi}?amount=${event.amount}`}
+      alt='UPI QR Code'
+      style={{ display: 'block', margin: '0 auto', width: '300px', height: '300px' }}
+    />
+  </div>
+</div>
+
 
                 <button
                   type='button'
