@@ -5,25 +5,14 @@ import { getAuth } from "firebase/auth";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-
-  apiKey: "AIzaSyCVYA-hOK-5qhQ3Zwx3kPZCk5YkYSifv7M",
-
-  authDomain: "events-6470c.firebaseapp.com",
-
-  databaseURL: "https://events-6470c-default-rtdb.asia-southeast1.firebasedatabase.app",
-
-  projectId: "events-6470c",
-
-  storageBucket: "events-6470c.appspot.com",
-
-  messagingSenderId: "894616506442",
-
-  appId: "1:894616506442:web:951b29e12333dd316ed6b3",
-
-  measurementId: "G-BWNH1RH91G"
-
+	apiKey: "AIzaSyCiTxiWzxAOndzpeNyy3TuLeT9bxnM0ra4",
+	authDomain: "eventtiz.firebaseapp.com",
+	projectId: "eventtiz",
+	storageBucket: "eventtiz.appspot.com",
+	messagingSenderId: "600043838110",
+	appId: "1:600043838110:web:8e094eec1f41d6c353f98f",
+	measurementId: "G-25R0S4XSE6",
 };
-
 
 // Initialize Firebase
 let app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApps()[0];
