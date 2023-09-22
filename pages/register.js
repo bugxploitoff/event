@@ -3,7 +3,8 @@ import Head from "next/head";
 import Link from "next/link";
 import { HiMail } from "react-icons/hi";
 import { AiTwotoneLock, AiFillCheckCircle } from "react-icons/ai";
-import { firebaseCreateUser, sendEmailVerification } from "../utils/util";
+import { firebaseCreateUser } from "../utils/util";
+import { sendEmailVerification } from "firebase/auth";
 import { useRouter } from "next/router";
 
 const register = () => {
