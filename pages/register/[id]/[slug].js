@@ -30,16 +30,16 @@ const RegisterPage = ({ event }) => {
   const [loading, setLoading] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [trans, setTrans] = useState(""); // Added trans state
+  const [trans, setTrans] = useState("");
   const { query } = useRouter();
   const [showPopup, setShowPopup] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    registerAttendee(name, email, query.id, trans, setSuccess, setLoading); // Added trans to the function
+    registerAttendee(name, email, query.id, trans, setSuccess, setLoading);
     setEmail("");
     setName("");
-    setTrans(""); // Clear trans after submission
+    setTrans("");
   };
 
   const openPopup = () => {
@@ -104,7 +104,7 @@ const RegisterPage = ({ event }) => {
 
             {showPopup ? (
               <>
-                <label htmlFor='trans'>Payment Transaction no</label> {/* Added label for the payment transaction */}
+                <label htmlFor='trans'>Payment Transaction no</label>
                 <div className='w-full relative'>
                   <input
                     type='text'
@@ -116,6 +116,16 @@ const RegisterPage = ({ event }) => {
                   />
                   <HiMail className=' absolute left-4 top-3 text-gray-300 text-xl' />
                 </div>
+
+                {/* UPI Payment QR Code */}
+                <div className='text-center'>
+                  <p>Scan the QR code below to make the payment:</p>
+                  <img
+                    src={`https://www.bhimupi.org.in/qr?pa=${event.upi}&pn=${event.title}&tn=Payment&am=${event.amount}&cu=INR`}
+                    alt='UPI QR Code'
+                  />
+                </div>
+
                 <button
                   type='button'
                   onClick={closePopup}
