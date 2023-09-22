@@ -26,11 +26,32 @@ export async function getServerSideProps(context) {
 }
 
 const RegisterPage = ({ event }) => {
+	 const [showPopup, setShowPopup] = useState(false);
+  	const [transno, setTransno] = useState('');
 	const [success, setSuccess] = useState(false);
 	const [loading, setLoading] = useState(false);
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
 	const { query } = useRouter();
+
+	  const openPopup = () => {
+    setShowPopup(true);
+  }
+
+  const closePopup = () => {
+    setShowPopup(false);
+  }
+
+  const handleTransnoChange = (e) => {
+    setTransno(e.target.value);
+  }
+
+  const handleGetTicket = () => {
+    // Add your logic to handle getting a ticket with the transno value
+    // You can make an API call or perform any other action here
+    // Once you're done, you can close the popup
+    closePopup();
+  }
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
@@ -92,17 +113,33 @@ const RegisterPage = ({ event }) => {
 							/>
 							<HiMail className=' absolute left-4 top-3 text-gray-300 text-xl' />
 						</div>
-									<button
-							className='bg-[#FFD95A] p-3 font-medium hover:bg-[#C07F00] hover:text-[#FFF8DE] mb-3 rounded-md'
-						>
-							Book and pay
-						</button>
-						<button
-							type='submit'
-							className='bg-[#FFD95A] p-3 font-medium hover:bg-[#C07F00] hover:text-[#FFF8DE] mb-3 rounded-md'
-						>
-							GET TICKET
-						</button>
+							 {showPopup ? (
+        <div className="popup">
+          <input
+            type="text"
+            name="transno"
+            value={transno}
+            onChange={handleTransnoChange}
+            className="border px-10 py-2 mb-3 rounded-md w-full"
+            required
+          />
+          <button
+            type="button"
+            onClick={handleGetTicket}
+            className="bg-[#FFD95A] p-3 font-medium hover:bg-[#C07F00] hover:text-[#FFF8DE] mb-3 rounded-md"
+          >
+            GET TICKET
+          </button>
+        </div>
+      ) : (
+        <button
+          onClick={openPopup}
+          className="bg-[#FFD95A] p-3 font-medium hover:bg-[#C07F00] hover:text-[#FFF8DE] mb-3 rounded-md"
+        >
+          Book and pay
+        </button>
+      )}
+						</div>
 					</form>
 					<div className='absolute bottom-5 left-5'>
 						<p className='opacity-50 text-sm'>
