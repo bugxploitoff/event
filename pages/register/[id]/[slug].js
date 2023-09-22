@@ -92,6 +92,11 @@ const RegisterPage = ({ event }) => {
 							/>
 							<HiMail className=' absolute left-4 top-3 text-gray-300 text-xl' />
 						</div>
+									<button
+							className='bg-[#FFD95A] p-3 font-medium hover:bg-[#C07F00] hover:text-[#FFF8DE] mb-3 rounded-md'
+						>
+							Book and pay
+						</button>
 						<button
 							type='submit'
 							className='bg-[#FFD95A] p-3 font-medium hover:bg-[#C07F00] hover:text-[#FFF8DE] mb-3 rounded-md'
