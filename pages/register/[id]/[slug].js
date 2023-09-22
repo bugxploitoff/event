@@ -106,7 +106,7 @@ const RegisterPage = ({ event }) => {
 					</form>
 					<div className='absolute bottom-5 left-5'>
 						<p className='opacity-50 text-sm'>
-							<Link href='/'>{event.title},{event.upi},{event.amount}</Link> &copy; Copyright{" "}
+							<Link href='/'>{event.title}</Link> &copy; Copyright{" "}
 							{new Date().getFullYear()}{" "}
 						</p>
 					</div>
