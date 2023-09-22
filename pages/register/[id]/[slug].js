@@ -30,6 +30,7 @@ const RegisterPage = ({ event }) => {
   const [loading, setLoading] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [trans, setTrans] = useState("");
   const { query } = useRouter();
   const [showPopup, setShowPopup] = useState(false);
 
@@ -119,6 +120,20 @@ const RegisterPage = ({ event }) => {
             )}
 
             {showPopup && (
+              <label htmlFor='email'>Payment Transaction no</label>
+            <div className='w-full relative'>
+              <input
+                type='text'
+                name='trans'
+                value={trans}
+                onChange={(e) => setTrans(e.target.value)}
+                className='border px-10 py-2 mb-3 rounded-md w-full'
+                required
+              />
+              <HiMail className=' absolute left-4 top-3 text-gray-300 text-xl' />
+            </div>
+
+              <HiMail className=' absolute left-4 top-3 text-gray-300 text-xl' />
               <button
                 type='submit'
                 className='bg-[#FFD95A] p-3 font-medium hover:bg-[#C07F00] hover:text-[#FFF8DE] mb-3 rounded-md'
