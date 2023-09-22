@@ -13,6 +13,8 @@ const event = () => {
 	const [title, setTitle] = useState("");
 	const [date, setDate] = useState("");
 	const [time, setTime] = useState("");
+	const [upi, setUpi] = useState("");
+	const [amount, setAmount] = useState("");
 	const [venue, setVenue] = useState("");
 	const [description, setDescription] = useState("");
 	const [note, setNote] = useState("");
@@ -110,6 +112,30 @@ const event = () => {
 								required
 								value={time}
 								onChange={(e) => setTime(e.target.value)}
+							/>
+						</div>
+					</div>
+									<div className='w-full flex justify-between'>
+						<div className='w-1/2 flex flex-col mr-[20px]'>
+							<label htmlFor='date'>Upi id</label>
+							<input
+								name='upi'
+								type='text'
+								className='border-[1px] py-2 px-4 rounded-md mb-3'
+								required
+								value={date}
+								onChange={(e) => setUpi(e.target.value)}
+							/>
+						</div>
+						<div className='w-1/2 flex flex-col'>
+							<label htmlFor='time'>Amount</label>
+							<input
+								name='anount'
+								type='number'
+								className='border-[1px] py-2 px-4 rounded-md mb-3'
+								required
+								value={time}
+								onChange={(e) => setAmount(e.target.value)}
 							/>
 						</div>
 					</div>
