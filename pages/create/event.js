@@ -44,6 +44,8 @@ const event = () => {
 			title,
 			date,
 			time,
+			upi,
+			amount,
 			venue,
 			description,
 			note,
