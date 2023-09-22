@@ -15,11 +15,24 @@ const register = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		if (password === cpassword) {
-			firebaseCreateUser(email, password, router);
-			setEmail("");
-			setPassword("");
-			setCPassword("");
-		}
+      try {
+        // Initialize Firebase Authentication
+        const auth = getAuth();
+
+        // Create a user and send verification email
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+
+        // Send a verification email to the user
+        await sendEmailVerification(auth.currentUser);
+
+        // Set registration status to true
+        setIsRegistered(true);
+      } catch (error) {
+        console.error("Error registering user:", error);
+      }
+    }
+  };
 	};
 
 	return (
