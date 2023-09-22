@@ -236,7 +236,7 @@ export const registerAttendee = async (
 	name,
 	email,
 	event_id,
-	trans,
+	trans, // Use this trans variable
 	setSuccess,
 	setLoading
 ) => {
@@ -255,7 +255,7 @@ export const registerAttendee = async (
 					name,
 					email,
 					passcode,
-					trans,
+					trans, // Use the trans variable here as well
 				}),
 			});
 			const flierURL = firebaseEvent.flier_url
@@ -267,7 +267,7 @@ export const registerAttendee = async (
 				firebaseEvent.title,
 				firebaseEvent.time,
 				firebaseEvent.date,
-				firebaseEvent.trans,
+				trans, // Use the trans variable here as well
 				firebaseEvent.note,
 				firebaseEvent.description,
 				passcode,
