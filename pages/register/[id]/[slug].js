@@ -167,4 +167,16 @@ const RegisterPage = ({ event }) => {
                 Check your email for your ticket and event information.
               </p>
               <button
-                className='px-4 py-2 bg-[#FFD95A] rounded
+                className='px-4 py-2 bg-[#FFD95A] rounded-md'
+                onClick={() => setSuccess(false)}
+              >
+                OK
+              </button>
+            </div>
+          </div>
+        )}
+      </main>
+    </div>
+  );
+};
+export default RegisterPage;
