@@ -12,13 +12,13 @@ const Ticket = () => {
   const [password, setPassword] = useState("");
   const [cpassword, setCPassword] = useState("");
   const { query } = useRouter();
-  const { router } = useRouter();
 
+const handleSubmit = (e) => {
+  e.preventDefault();
+  const newUrl = `/ticket/${query.id}/${email}/${query.slug}`;
+  window.location.href = newUrl;
+};
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    router.push('/.hbuy');
-  };
 
 
 	return (
