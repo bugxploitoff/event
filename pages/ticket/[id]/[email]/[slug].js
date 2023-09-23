@@ -20,20 +20,23 @@ export async function getServerSideProps(context) {
   } else {
     console.log("No such document!");
   }
+
+  const attendeeIndex = firebaseEvent.attendees.findIndex(
+    (attendee) => attendee.email === context.query.email
+  );
+
   return {
-    props: { event: firebaseEvent },
+    props: { event: firebaseEvent, attendeeIndex },
   };
 }
 
-const TicketPage = ({ event }) => {
+const TicketPage = ({ event, attendeeIndex }) => {
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [trans, setTrans] = useState("");
-  const { query } = useRouter();
-  const attendeeIndex = event.attendees.findIndex((attendee) => attendee.email === query.email);
-  console.log(attendeeIndex)
+  const router = useRouter();
 
   if (loading) {
     return <Loading title="Generating your ticket🤞🏼" />;
@@ -44,6 +47,12 @@ const TicketPage = ({ event }) => {
 
   if (event.disableRegistration) {
     return <RegClosed event={event} />;
+  }
+
+  if (attendeeIndex === -1) {
+    // Redirect to the desired URL (in this case, '/')
+    router.push("/");
+    return null; // Return null or a loading indicator while redirecting
   }
 
   return (
@@ -60,9 +69,7 @@ const TicketPage = ({ event }) => {
       <main className="w-full flex items-center justify-between min-h-[100vh] relative">
         <div className="md:w-[60%] w-full flex flex-col items-center justify-center min-h-[100vh] px-[30px] py-[30px] relative">
           <h2 className="text-2xl font-medium mb-3">Welcome to {event.title}</h2>
-          <form
-            className="w-full flex flex-col justify-center"
-          >
+          <form className="w-full flex flex-col justify-center">
             <label htmlFor="name">Full name</label>
             <div className="w-full relative">
               <input
@@ -74,18 +81,17 @@ const TicketPage = ({ event }) => {
               />
               <FaUserAlt className=" absolute left-4 top-3 text-gray-300" />
             </div>
-              <label htmlFor="email">Date</label>
+            <label htmlFor="email">Date</label>
             <div className="w-full relative">
               <input
                 name="date"
                 value={event.date}
                 className="border px-10 py-2 mb-3 rounded-md w-full"
-                disable
+                disabled
               />
-                  <HiCalendar className=" absolute left-4 top-3 text-gray-300 text-xl" />
-              
+              <HiCalendar className=" absolute left-4 top-3 text-gray-300 text-xl" />
             </div>
-                     <label htmlFor="email">time</label>
+            <label htmlFor="email">Time</label>
             <div className="w-full relative">
               <input
                 name="time"
@@ -93,9 +99,9 @@ const TicketPage = ({ event }) => {
                 className="border px-10 py-2 mb-3 rounded-md w-full"
                 disabled
               />
-                  <HiClock className=" absolute left-4 top-3 text-gray-300 text-xl" />
+              <HiClock className=" absolute left-4 top-3 text-gray-300 text-xl" />
             </div>
-                     <label htmlFor="email">Venu</label>
+            <label htmlFor="email">Venue</label>
             <div className="w-full relative">
               <input
                 name="time"
@@ -103,9 +109,9 @@ const TicketPage = ({ event }) => {
                 className="border px-10 py-2 mb-3 rounded-md w-full"
                 disabled
               />
-                  <HiBookmark className=" absolute left-4 top-3 text-gray-300 text-xl" />
+              <HiBookmark className=" absolute left-4 top-3 text-gray-300 text-xl" />
             </div>
-                      <label htmlFor="email">Note</label>
+            <label htmlFor="email">Note</label>
             <div className="w-full relative">
               <input
                 name="text"
@@ -113,9 +119,9 @@ const TicketPage = ({ event }) => {
                 className="border px-10 py-2 mb-3 rounded-md w-full"
                 disabled
               />
-                  <HiPencilAlt className=" absolute left-4 top-3 text-gray-300 text-xl" />
+              <HiPencilAlt className=" absolute left-4 top-3 text-gray-300 text-xl" />
             </div>
-                          <label htmlFor="email">Description</label>
+            <label htmlFor="email">Description</label>
             <div className="w-full relative">
               <input
                 name="text"
@@ -123,9 +129,8 @@ const TicketPage = ({ event }) => {
                 className="border px-10 py-2 mb-3 rounded-md w-full"
                 disabled
               />
-                  <HiSpeakerphone className=" absolute left-4 top-3 text-gray-300 text-xl" />
+              <HiSpeakerphone className=" absolute left-4 top-3 text-gray-300 text-xl" />
             </div>
-
             <div className="text-center">
               <p>Scan the QR code below to make the payment:</p>
               <img
@@ -139,7 +144,6 @@ const TicketPage = ({ event }) => {
                 }}
               />
             </div>
-
           </form>
           <div className="absolute bottom-5 left-5">
             <p className="opacity-50 text-sm">
@@ -181,4 +185,5 @@ const TicketPage = ({ event }) => {
     </div>
   );
 };
+
 export default TicketPage;
