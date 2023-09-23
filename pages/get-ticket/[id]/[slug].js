@@ -8,19 +8,20 @@ import { AiTwotoneLock, AiFillCheckCircle } from "react-icons/ai";
 import { firebaseCreateUser } from "../../../utils/util";
 import { useRouter } from "next/router";
 
-const ticket = () => {
-	const [email, setEmail] = useState("");
-	const [key, setKey] = useState("");
-	const [password, setPassword] = useState("");
-	const [cpassword, setCPassword] = useState("");
-	const {router, query} = useRouter();
+const Ticket = () => {
+  const [email, setEmail] = useState("");
+  const [key, setKey] = useState("");
+  const [password, setPassword] = useState("");
+  const [cpassword, setCPassword] = useState("");
+  const { router, query } = useRouter();
 
-	  const handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     // Use backticks to create a template string
     router.push(`/ticket/${query.id}/${email}/${query.slug}`);
   };
+
 
 	return (
 		<div>
@@ -85,4 +86,4 @@ const ticket = () => {
 	);
 };
 
-export default ticket;
+export default Ticket;
