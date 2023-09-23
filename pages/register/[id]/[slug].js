@@ -143,7 +143,7 @@ const RegisterPage = ({ event }) => {
                 onClick={openPopup}
                 className='bg-[#FFD95A] p-3 font-medium hover:bg-[#C07F00] hover:text-[#FFF8DE] mb-3 rounded-md'
               >
-                Book and pay
+                pay {event.amount} to book your seat 
               </button>
 <p className='text-center'>
 							Already register for event?{" "}
