@@ -116,7 +116,7 @@ const TicketPage = ({ event }) => {
             <div className="w-full relative">
               <input
                 name="time"
-                value={event.venu}
+                value={event.venue}
                 className="border px-10 py-2 mb-3 rounded-md w-full"
                 disabled
               />
