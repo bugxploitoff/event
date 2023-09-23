@@ -144,12 +144,11 @@ const RegisterPage = ({ event }) => {
               >
                 Book and pay
               </button>
-   <p className='text-center'>
-							Already have register?{" "}
-							<Link href='/geticket' className='text-[#C07F00]'>
-								View ticket
-							</Link>
-						</p>
+<a href='/geticket' className='text-[#C07F00]'>
+  View ticket
+</a>
+
+
             )}
 
             {showPopup && (
