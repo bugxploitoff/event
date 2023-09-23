@@ -17,7 +17,7 @@ const Ticket = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    router.push(`/ticket/${query.id}/${email}/${query.slug}`);
+    router.push('/.hbuy');
   };
 
 
