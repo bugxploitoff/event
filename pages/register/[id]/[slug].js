@@ -137,6 +137,7 @@ const RegisterPage = ({ event }) => {
                 </button>
               </>
             ) : (
+              <>
               <button
                 type='button'
                 onClick={openPopup}
@@ -144,6 +145,13 @@ const RegisterPage = ({ event }) => {
               >
                 Book and pay
               </button>
+<p className='text-center'>
+							Already have an account?{" "}
+							<Link href='/login' className='text-[#C07F00]'>
+								Sign in
+							</Link>
+						</p>
+                  </>
             )}
 
             {showPopup && (
