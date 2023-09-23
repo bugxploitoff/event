@@ -149,26 +149,30 @@ export const errorMessage = (message) => {
 		theme: "light",
 	});
 };
-export const firebaseCreateUser = (email, password, router) => {
-  createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      const user = userCredential.user;
-      
-      // Send a verification email to the user
-      sendEmailVerification(auth.currentUser)
-        .then(() => {
-          successMessage("Account created 🎉");
-          router.push("/login");
-        })
-        .catch((error) => {
-          console.error("Error sending verification email:", error);
-          errorMessage("Account creation declined ❌");
-        });
-    })
-    .catch((error) => {
-      console.error(error);
-      errorMessage("Account creation declined ❌");
-    });
+export const firebaseCreateUser = (email, password, key, router) => {
+  if (key === process.env.NEXT_PUBLIC_API_REGISTER) { // Use '===' for comparison
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        
+        // Send a verification email to the user
+        sendEmailVerification(auth.currentUser)
+          .then(() => {
+            successMessage("Account created 🎉");
+            router.push("/login");
+          })
+          .catch((error) => {
+            console.error("Error sending verification email:", error);
+            errorMessage("Account creation declined ❌");
+          });
+      })
+      .catch((error) => {
+        console.error(error);
+        errorMessage("Account creation declined ❌");
+      });
+  } else {
+    errorMessage("Account creation declined ❌");
+  }
 };
 
 export const firebaseLoginUser = (email, password, router) => {
