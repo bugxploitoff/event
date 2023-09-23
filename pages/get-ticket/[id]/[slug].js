@@ -15,9 +15,7 @@ const Ticket = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("hi");
-
-    // Use backticks to create a template string
+    console.log(`/ticket/${query.id}/${email}/${query.slug}`);
     router.push(`/ticket/${query.id}/${email}/${query.slug}`);
   };
 
