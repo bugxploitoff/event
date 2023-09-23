@@ -33,7 +33,6 @@ const RegisterPage = ({ event }) => {
   const [email, setEmail] = useState("");
   const [trans, setTrans] = useState("");
   const { query } = useRouter();
-  const [showPopup, setShowPopup] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -43,13 +42,6 @@ const RegisterPage = ({ event }) => {
     setTrans("");
   };
 
-  const openPopup = () => {
-    setShowPopup(true);
-  };
-
-  const closePopup = () => {
-    setShowPopup(false);
-  };
 
   if (loading) {
     return <Loading title='Generating your ticket🤞🏼' />;
@@ -103,10 +95,7 @@ const RegisterPage = ({ event }) => {
               <HiMail className=' absolute left-4 top-3 text-gray-300 text-xl' />
             </div>
 
-            {showPopup ? (
-              <>
-
-                {/* UPI Payment QR Code */}
+          
                 <div className='text-center'>
                   <p>Scan the QR code below to make the payment:</p>
                   <img
@@ -129,19 +118,9 @@ const RegisterPage = ({ event }) => {
                   <HiMail className=' absolute left-4 top-3 text-gray-300 text-xl' />
                 </div>
 
-                <button
-                  type='button'
-                  onClick={closePopup}
-                  className='bg-[#FFD95A] p-3 font-medium hover:bg-[#C07F00] hover:text-[#FFF8DE] mb-3 rounded-md'
-                >
-                  Cancel
-                </button>
-              </>
-            ) : (
-              <>
+               
               <button
                 type='button'
-                onClick={openPopup}
                 className='bg-[#FFD95A] p-3 font-medium hover:bg-[#C07F00] hover:text-[#FFF8DE] mb-3 rounded-md'
               >
                 Book and pay
