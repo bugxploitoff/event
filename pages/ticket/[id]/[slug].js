@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { FaUserAlt } from "react-icons/fa";
-import { HiMail, HiCalendar } from "react-icons/hi";
+import { HiMail, HiCalendar, HiBookmark, HiClock } from "react-icons/hi";
 import { doc, getDoc } from "@firebase/firestore";
 import db from "../../../utils/firebase";
 import { registerAttendee } from "../../../utils/util";
