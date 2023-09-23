@@ -33,7 +33,7 @@ const TicketPage = ({ event }) => {
   const [trans, setTrans] = useState("");
   const { query } = useRouter();
   console.log(query);
-  console.log(event.attendees);
+  console.log(event.attendees[0].email);
 
   const handleSubmit = (e) => {
     e.preventDefault();
