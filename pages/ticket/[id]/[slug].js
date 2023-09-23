@@ -102,6 +102,7 @@ const TicketPage = ({ event }) => {
                 className="border px-10 py-2 mb-3 rounded-md w-full"
                 disable
               />
+                  <HiCalendar className=" absolute left-4 top-3 text-gray-300 text-xl" />
               
             </div>
                      <label htmlFor="email">time</label>
@@ -112,7 +113,7 @@ const TicketPage = ({ event }) => {
                 className="border px-10 py-2 mb-3 rounded-md w-full"
                 disabled
               />
-                  <HiCalendar className=" absolute left-4 top-3 text-gray-300 text-xl" />
+                  <HiClock className=" absolute left-4 top-3 text-gray-300 text-xl" />
             </div>
                      <label htmlFor="email">Venu</label>
             <div className="w-full relative">
@@ -122,6 +123,7 @@ const TicketPage = ({ event }) => {
                 className="border px-10 py-2 mb-3 rounded-md w-full"
                 disabled
               />
+                  <HiBookmark className=" absolute left-4 top-3 text-gray-300 text-xl" />
             </div>
 
             <div className="text-center">
