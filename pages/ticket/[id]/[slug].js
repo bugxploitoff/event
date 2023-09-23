@@ -112,7 +112,6 @@ const TicketPage = ({ event }) => {
                 disabled
               />
             </div>
-                  </div>
                      <label htmlFor="email">Venu</label>
             <div className="w-full relative">
               <input
