@@ -17,8 +17,7 @@ const ticket = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-			firebaseGetticket(email, router);
-			setEmail("");
+		 router.push("/success");
 	};
 
 	return (
@@ -56,6 +55,7 @@ const ticket = () => {
 						<button
 							type='submit'
 							className='bg-[#FFD95A] p-3 font-medium hover:bg-[#C07F00] hover:text-[#FFF8DE] mb-3 rounded-md'
+								
 						>
 							Get ticket
 						</button>
