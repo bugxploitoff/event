@@ -104,7 +104,6 @@ const TicketPage = ({ event }) => {
               />
               
             </div>
-                  <HiCalendar className=" absolute left-4 top-3 text-gray-300 text-xl" />
                      <label htmlFor="email">time</label>
             <div className="w-full relative">
               <input
@@ -113,6 +112,7 @@ const TicketPage = ({ event }) => {
                 className="border px-10 py-2 mb-3 rounded-md w-full"
                 disabled
               />
+                  <HiCalendar className=" absolute left-4 top-3 text-gray-300 text-xl" />
             </div>
                      <label htmlFor="email">Venu</label>
             <div className="w-full relative">
