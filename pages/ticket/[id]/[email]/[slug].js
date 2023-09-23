@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { FaUserAlt } from "react-icons/fa";
-import { HiMail, HiCalendar, HiBookmark, HiClock } from "react-icons/hi";
+import { HiMail, HiCalendar, HiBookmark, HiClock, HiPencilAlt, HiSpeakerphone } from "react-icons/hi";
 import { doc, getDoc } from "@firebase/firestore";
 import db from "../../../../utils/firebase";
 import { registerAttendee } from "../../../../utils/util";
@@ -125,6 +125,26 @@ const TicketPage = ({ event }) => {
                 disabled
               />
                   <HiBookmark className=" absolute left-4 top-3 text-gray-300 text-xl" />
+            </div>
+                      <label htmlFor="email">Note</label>
+            <div className="w-full relative">
+              <input
+                name="text"
+                value={event.note}
+                className="border px-10 py-2 mb-3 rounded-md w-full"
+                disabled
+              />
+                  <HiPencilAlt className=" absolute left-4 top-3 text-gray-300 text-xl" />
+            </div>
+                          <label htmlFor="email">Description</label>
+            <div className="w-full relative">
+              <input
+                name="text"
+                value={event.description}
+                className="border px-10 py-2 mb-3 rounded-md w-full"
+                disabled
+              />
+                  <HiSpeakerphone className=" absolute left-4 top-3 text-gray-300 text-xl" />
             </div>
 
             <div className="text-center">
