@@ -83,18 +83,6 @@ const TicketPage = ({ event }) => {
               />
               <FaUserAlt className=" absolute left-4 top-3 text-gray-300" />
             </div>
-
-            <label htmlFor="email">Email address</label>
-            <div className="w-full relative">
-              <input
-                type="email"
-                name="email"
-                value={email}
-                className="border px-10 py-2 mb-3 rounded-md w-full"
-                required
-              />
-              <HiMail className=" absolute left-4 top-3 text-gray-300 text-xl" />
-            </div>
               <label htmlFor="email">Date</label>
             <div className="w-full relative">
               <input
