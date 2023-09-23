@@ -17,6 +17,7 @@ export async function getServerSideProps(context) {
   let firebaseEvent = {};
   if (docSnap.exists()) {
     firebaseEvent = docSnap.data();
+    console.log(firebaseEvent);
   } else {
     console.log("No such document!");
   }
