@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 
-const Ticket = () => {
+const GETTicket = () => {
   const [email, setEmail] = useState("");
   const { router, query } = useRouter();
 
@@ -76,4 +76,4 @@ const Ticket = () => {
   );
 };
 
-export default Ticket;
+export default GETTicket;
