@@ -16,7 +16,7 @@ const register = () => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		if (password === cpassword) {
-			firebaseCreateUser(email, password, router);
+			firebaseCreateUser(email, password,key, router);
 			setKey("");
 			setEmail("");
 			setPassword("");
