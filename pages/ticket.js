@@ -23,7 +23,7 @@ const ticket = () => {
 	return (
 		<div>
 			<Head>
-				<title>GEt ticket | Events</title>
+				<title>Get ticket | Events</title>
 				<meta
 					name='description'
 					content='An event ticketing system built with NextJS and Firebase'
@@ -56,14 +56,8 @@ const ticket = () => {
 							type='submit'
 							className='bg-[#FFD95A] p-3 font-medium hover:bg-[#C07F00] hover:text-[#FFF8DE] mb-3 rounded-md'
 						>
-							REGISTER
+							Get ticket
 						</button>
-						<p className='text-center'>
-							Already have an account?{" "}
-							<Link href='/login' className='text-[#C07F00]'>
-								Sign in
-							</Link>
-						</p>
 					</form>
 					<div className='absolute bottom-5 left-5'>
 						<p className='opacity-50 text-sm'>
