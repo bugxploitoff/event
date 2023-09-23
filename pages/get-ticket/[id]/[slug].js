@@ -13,12 +13,14 @@ const ticket = () => {
 	const [key, setKey] = useState("");
 	const [password, setPassword] = useState("");
 	const [cpassword, setCPassword] = useState("");
-	const router = useRouter();
+	const {router, query} = useRouter();
 
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		 router.push("/success");
-	};
+	  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Use backticks to create a template string
+    router.push(`/ticket/${query.id}/${email}/${query.slug}`);
+  };
 
 	return (
 		<div>
