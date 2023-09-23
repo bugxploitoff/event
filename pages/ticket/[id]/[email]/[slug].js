@@ -132,7 +132,7 @@ const TicketPage = ({ event, attendeeIndex }) => {
               <HiSpeakerphone className=" absolute left-4 top-3 text-gray-300 text-xl" />
             </div>
             <div className="text-center">
-              <p>Scan the QR code below to make the payment:</p>
+              <p>Your entry code : {event.attendees[attendeeIndex].passcode}</p>
               <img
                 src={`https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${event.attendees[attendeeIndex].passcode}`}
                 alt="UPI QR Code"
