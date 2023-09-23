@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
@@ -26,7 +25,7 @@ export async function getServerSideProps(context) {
   };
 }
 
-const RegisterPage = ({ event }) => {
+const TicketPage = ({ event }) => {
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
   const [name, setName] = useState("");
@@ -42,9 +41,8 @@ const RegisterPage = ({ event }) => {
     setTrans("");
   };
 
-
   if (loading) {
-    return <Loading title='Generating your ticket🤞🏼' />;
+    return <Loading title="Generating your ticket🤞🏼" />;
   }
   if (!event.title) {
     return <ErrorPage />;
@@ -59,115 +57,115 @@ const RegisterPage = ({ event }) => {
       <Head>
         <title>{`${event.title} | Events`}</title>
         <meta
-          name='description'
-          content='An event ticketing system built with NextJS and Firebase'
+          name="description"
+          content="An event ticketing system built with NextJS and Firebase"
         />
-        <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <link rel='icon' href='/favicon.ico' />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className='w-full flex items-center justify-between min-h-[100vh] relative'>
-        <div className='md:w-[60%] w-full flex flex-col items-center justify-center min-h-[100vh] px-[30px] py-[30px] relative'>
-          <h2 className='text-2xl font-medium mb-3'>Get your ticket 🎉</h2>
-          <form className='w-full flex flex-col justify-center' onSubmit={handleSubmit}>
-            <label htmlFor='name'>Full name</label>
-            <div className='w-full relative'>
+      <main className="w-full flex items-center justify-between min-h-[100vh] relative">
+        <div className="md:w-[60%] w-full flex flex-col items-center justify-center min-h-[100vh] px-[30px] py-[30px] relative">
+          <h2 className="text-2xl font-medium mb-3">Get your ticket 🎉</h2>
+          <form
+            className="w-full flex flex-col justify-center"
+            onSubmit={handleSubmit}
+          >
+            <label htmlFor="name">Full name</label>
+            <div className="w-full relative">
               <input
-                type='text'
-                name='name'
+                type="text"
+                name="name"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className='border px-10 py-2 mb-3 rounded-md w-full'
+                className="border px-10 py-2 mb-3 rounded-md w-full"
                 required
               />
-              <FaUserAlt className=' absolute left-4 top-3 text-gray-300' />
+              <FaUserAlt className=" absolute left-4 top-3 text-gray-300" />
             </div>
 
-            <label htmlFor='email'>Email address</label>
-            <div className='w-full relative'>
+            <label htmlFor="email">Email address</label>
+            <div className="w-full relative">
               <input
-                type='email'
-                name='email'
+                type="email"
+                name="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className='border px-10 py-2 mb-3 rounded-md w-full'
+                className="border px-10 py-2 mb-3 rounded-md w-full"
                 required
               />
-              <HiMail className=' absolute left-4 top-3 text-gray-300 text-xl' />
+              <HiMail className=" absolute left-4 top-3 text-gray-300 text-xl" />
             </div>
 
-          
-                <div className='text-center'>
-                  <p>Scan the QR code below to make the payment:</p>
-                  <img
-                    src={`https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(`upi://pay?pa=${event.upi}&pn=${encodeURIComponent('pwnme')}&mc=&tr=${encodeURIComponent(trans)}&am=${event.amount}&cu=INR`)}`}
-                    alt='UPI QR Code'
-                    style={{ display: 'block', margin: '0 auto', width: '300px', height: '300px' }}
-                  />
-                </div>
-<br />
-                    <label htmlFor='trans'>Payment Transaction no</label>
-                <div className='w-full relative'>
-                  <input
-                    type='text'
-                    name='trans'
-                    value={trans}
-                    onChange={(e) => setTrans(e.target.value)}
-                    className='border px-10 py-2 mb-3 rounded-md w-full'
-                    required
-                  />
-                  <HiMail className=' absolute left-4 top-3 text-gray-300 text-xl' />
-                </div>
+            <div className="text-center">
+              <p>Scan the QR code below to make the payment:</p>
+              <img
+                src={`https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(`upi://pay?pa=${event.upi}&pn=${encodeURIComponent('pwnme')}&mc=&tr=${encodeURIComponent(trans)}&am=${event.amount}&cu=INR`)}`}
+                alt="UPI QR Code"
+                style={{
+                  display: "block",
+                  margin: "0 auto",
+                  width: "300px",
+                  height: "300px",
+                }}
+              />
+            </div>
+            <br />
+            <label htmlFor="trans">Payment Transaction no</label>
+            <div className="w-full relative">
+              <input
+                type="text"
+                name="trans"
+                value={trans}
+                onChange={(e) => setTrans(e.target.value)}
+                className="border px-10 py-2 mb-3 rounded-md w-full"
+                required
+              />
+              <HiMail className=" absolute left-4 top-3 text-gray-300 text-xl" />
+            </div>
 
-               
-              <button
-                type='button'
-                className='bg-[#FFD95A] p-3 font-medium hover:bg-[#C07F00] hover:text-[#FFF8DE] mb-3 rounded-md'
-              >
-                Book and pay
-              </button>
-<p className='text-center'>
-							Already register for event?{" "}
-							<Link href='/ticket' className='text-[#C07F00]'>
-								view ticket
-							</Link>
-						</p>
-                  </>
-            )}
+            <button
+              type="submit"
+              className="bg-[#FFD95A] p-3 font-medium hover:bg-[#C07F00] hover:text-[#FFF8DE] mb-3 rounded-md"
+            >
+              GET TICKET
+            </button>
 
-            {showPopup && (
-              <button
-                type='submit'
-                className='bg-[#FFD95A] p-3 font-medium hover:bg-[#C07F00] hover:text-[#FFF8DE] mb-3 rounded-md'
-              >
-                GET TICKET
-              </button>
-            )}
+            <p className="text-center">
+              Already registered for the event?{" "}
+              <Link href="/ticket" className="text-[#C07F00]">
+                View ticket
+              </Link>
+            </p>
           </form>
-          <div className='absolute bottom-5 left-5'>
-            <p className='opacity-50 text-sm'>
-              <Link href='/'>{event.title}</Link> &copy; Copyright{" "}
+          <div className="absolute bottom-5 left-5">
+            <p className="opacity-50 text-sm">
+              <Link href="/">{event.title}</Link> &copy; Copyright{" "}
               {new Date().getFullYear()}{" "}
             </p>
           </div>
         </div>
-        <div className='login md:w-[40%] h-[100vh] relative'>
-          <div className='absolute bottom-5 right-5'>
-            <a href='https://github.com/bugxploitoff' target='_blank' className='text-gray-100'>
+        <div className="login md:w-[40%] h-[100vh] relative">
+          <div className="absolute bottom-5 right-5">
+            <a
+              href="https://github.com/bugxploitoff"
+              target="_blank"
+              className="text-gray-100"
+            >
               Built by Bugxploit
             </a>
           </div>
         </div>
         {success && (
-          <div className='w-full h-[100vh] dim absolute top-0 flex items-center justify-center z-40'>
-            <div className='w-[400px] bg-white h-[300px] flex items-center justify-center flex-col rounded-md shadow-[#FFD95A] shadow-md'>
-              <h2 className='text-2xl font-extrabold mb-4 text-center'>
+          <div className="w-full h-[100vh] dim absolute top-0 flex items-center justify-center z-40">
+            <div className="w-[400px] bg-white h-[300px] flex items-center justify-center flex-col rounded-md shadow-[#FFD95A] shadow-md">
+              <h2 className="text-2xl font-extrabold mb-4 text-center">
                 Registered Successfully! 🎉
               </h2>
-              <p className='text-center mb-6'>
+              <p className="text-center mb-6">
                 Check your email for your ticket and event information.
               </p>
               <button
-                className='px-4 py-2 bg-[#FFD95A] rounded-md'
+                className="px-4 py-2 bg-[#FFD95A] rounded-md"
                 onClick={() => setSuccess(false)}
               >
                 OK
@@ -179,4 +177,4 @@ const RegisterPage = ({ event }) => {
     </div>
   );
 };
-export default RegisterPage;
+export default TicketPage;
