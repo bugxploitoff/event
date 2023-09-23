@@ -126,7 +126,7 @@ const TicketPage = ({ event }) => {
             <div className="text-center">
               <p>Scan the QR code below to make the payment:</p>
               <img
-                src={`https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${event.time}
+                src={`https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${event.time}`}
                 alt="UPI QR Code"
                 style={{
                   display: "block",
