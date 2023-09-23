@@ -11,11 +11,12 @@ const Ticket = () => {
   const [key, setKey] = useState("");
   const [password, setPassword] = useState("");
   const [cpassword, setCPassword] = useState("");
-  const { router, query } = useRouter();
+  const { query } = useRouter();
+  const { router } = useRouter();
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(`/ticket/${query.id}/${email}/${query.slug}`);
     router.push(`/ticket/${query.id}/${email}/${query.slug}`);
   };
 
