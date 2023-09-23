@@ -144,11 +144,6 @@ const RegisterPage = ({ event }) => {
               >
                 Book and pay
               </button>
-<a href='/geticket' className='text-[#C07F00]'>
-  View ticket
-</a>
-
-
             )}
 
             {showPopup && (
