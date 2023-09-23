@@ -68,7 +68,6 @@ const TicketPage = ({ event }) => {
           <h2 className="text-2xl font-medium mb-3">Get your ticket 🎉</h2>
           <form
             className="w-full flex flex-col justify-center"
-            onSubmit={handleSubmit}
           >
             <label htmlFor="name">Full name</label>
             <div className="w-full relative">
@@ -89,9 +88,30 @@ const TicketPage = ({ event }) => {
                 type="email"
                 name="email"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
                 className="border px-10 py-2 mb-3 rounded-md w-full"
                 required
+              />
+              <HiMail className=" absolute left-4 top-3 text-gray-300 text-xl" />
+            </div>
+              <label htmlFor="email">Date</label>
+            <div className="w-full relative">
+              <input
+                type="date"
+                name="date"
+                value={event.date}
+                className="border px-10 py-2 mb-3 rounded-md w-full"
+                disable
+              />
+              <HiMail className=" absolute left-4 top-3 text-gray-300 text-xl" />
+            </div>
+                     <label htmlFor="email">time</label>
+            <div className="w-full relative">
+              <input
+                type="time"
+                name="time"
+                value={event.time}
+                className="border px-10 py-2 mb-3 rounded-md w-full"
+                disabled
               />
               <HiMail className=" absolute left-4 top-3 text-gray-300 text-xl" />
             </div>
@@ -109,33 +129,7 @@ const TicketPage = ({ event }) => {
                 }}
               />
             </div>
-            <br />
-            <label htmlFor="trans">Payment Transaction no</label>
-            <div className="w-full relative">
-              <input
-                type="text"
-                name="trans"
-                value={trans}
-                onChange={(e) => setTrans(e.target.value)}
-                className="border px-10 py-2 mb-3 rounded-md w-full"
-                required
-              />
-              <HiMail className=" absolute left-4 top-3 text-gray-300 text-xl" />
-            </div>
 
-            <button
-              type="submit"
-              className="bg-[#FFD95A] p-3 font-medium hover:bg-[#C07F00] hover:text-[#FFF8DE] mb-3 rounded-md"
-            >
-              GET TICKET
-            </button>
-
-            <p className="text-center">
-              Already registered for the event?{" "}
-              <Link href="/ticket" className="text-[#C07F00]">
-                View ticket
-              </Link>
-            </p>
           </form>
           <div className="absolute bottom-5 left-5">
             <p className="opacity-50 text-sm">
