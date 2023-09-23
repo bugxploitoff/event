@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 
 const register = () => {
 	const [email, setEmail] = useState("");
+	const [key, setKey] = useState("");
 	const [password, setPassword] = useState("");
 	const [cpassword, setCPassword] = useState("");
 	const router = useRouter();
@@ -16,6 +17,7 @@ const register = () => {
 		e.preventDefault();
 		if (password === cpassword) {
 			firebaseCreateUser(email, password, router);
+			setKey("");
 			setEmail("");
 			setPassword("");
 			setCPassword("");
@@ -42,6 +44,19 @@ const register = () => {
 						className='w-full flex flex-col justify-center'
 						onSubmit={handleSubmit}
 					>
+							
+						<label htmlFor='key'>Invite key</label>
+						<div className='w-full relative'>
+							<input
+								type='text'
+								name='key'
+								className='border px-10 py-2 mb-3 rounded-md w-full'
+								required
+								value={key}
+								onChange={(e) => setKey(e.target.value)}
+							/>
+							<HiMail className=' absolute left-4 top-3 text-gray-300 text-xl' />
+						</div>
 						<label htmlFor='email'>Email address</label>
 						<div className='w-full relative'>
 							<input
@@ -112,11 +127,11 @@ const register = () => {
 				<div className='register md:w-[40%] h-[100vh] relative'>
 					<div className='absolute bottom-5 right-5'>
 						<a
-							href='https://github.com/dha-stix'
+							href='https://github.com/bugxploitoff'
 							target='_blank'
 							className='text-gray-100'
 						>
-							Built by David Asaolu
+							Built by Bugxploit
 						</a>
 					</div>
 				</div>
