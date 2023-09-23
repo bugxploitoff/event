@@ -147,9 +147,10 @@ const RegisterPage = ({ event }) => {
               </button>
 <p className='text-center'>
 							Already register for event?{" "}
-							<Link href='/ticket/{query.id}' className='text-[#C07F00]'>
-								view ticket
-							</Link>
+							<Link href={`/ticket/${query.id}`} className='text-[#C07F00]'>
+    View Ticket
+</Link>
+
 						</p>
                   </>
             )}
