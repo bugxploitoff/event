@@ -96,30 +96,37 @@ const TicketPage = ({ event }) => {
               <label htmlFor="email">Date</label>
             <div className="w-full relative">
               <input
-                type="date"
                 name="date"
                 value={event.date}
                 className="border px-10 py-2 mb-3 rounded-md w-full"
                 disable
               />
-              <HiMail className=" absolute left-4 top-3 text-gray-300 text-xl" />
+              
             </div>
                      <label htmlFor="email">time</label>
             <div className="w-full relative">
               <input
-                type="time"
                 name="time"
                 value={event.time}
                 className="border px-10 py-2 mb-3 rounded-md w-full"
                 disabled
               />
-              <HiMail className=" absolute left-4 top-3 text-gray-300 text-xl" />
+            </div>
+                  </div>
+                     <label htmlFor="email">Venu</label>
+            <div className="w-full relative">
+              <input
+                name="time"
+                value={event.venu}
+                className="border px-10 py-2 mb-3 rounded-md w-full"
+                disabled
+              />
             </div>
 
             <div className="text-center">
               <p>Scan the QR code below to make the payment:</p>
               <img
-                src={`https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encodeURIComponent(`upi://pay?pa=${event.upi}&pn=${encodeURIComponent('pwnme')}&mc=&tr=${encodeURIComponent(trans)}&am=${event.amount}&cu=INR`)}`}
+                src={`https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${event.time}
                 alt="UPI QR Code"
                 style={{
                   display: "block",
