@@ -13,7 +13,6 @@ import Loading from "../../../components/Loading";
 
 export async function getServerSideProps(context) {
   const docRef = doc(db, "events", context.query.id);
-  console.log(docRef)
   const docSnap = await getDoc(docRef);
   let firebaseEvent = {};
   if (docSnap.exists()) {
@@ -33,6 +32,7 @@ const TicketPage = ({ event }) => {
   const [email, setEmail] = useState("");
   const [trans, setTrans] = useState("");
   const { query } = useRouter();
+  console.log(query);
 
   const handleSubmit = (e) => {
     e.preventDefault();
