@@ -237,52 +237,39 @@ export const updateRegLink = async (id) => {
 	});
 };
 export const registerAttendee = async (
-	name,
-	email,
-	event_id,
-	trans, // Include the trans parameter
-	setSuccess,
-	setLoading
+  name,
+  email,
+  event_id,
+  trans, // Include the trans parameter
+  setSuccess,
+  setLoading
 ) => {
-	setLoading(true);
-	const passcode = generateID();
-	const eventRef = doc(db, "events", event_id);
-	const eventSnap = await getDoc(eventRef);
-	let firebaseEvent = {};
-	if (eventSnap.exists()) {
-		firebaseEvent = eventSnap.data();
-		const attendees = firebaseEvent.attendees;
-		const result = attendees.filter((item) => item.email === email);
-		if (result.length === 0 && firebaseEvent.disableRegistration === false) {
-			await updateDoc(eventRef, {
-				attendees: arrayUnion({
-					name,
-					email,
-					passcode,
-					trans, // Include trans here
-				}),
-			});
-			const flierURL = firebaseEvent.flier_url
-				? firebaseEvent.flier_url
-				: "No flier for this event";
-			sendEmail(
-				name,
-				email,
-				firebaseEvent.title,
-				firebaseEvent.time,
-				firebaseEvent.date,
-				firebaseEvent.note,
-				firebaseEvent.description,
-				passcode,
-				flierURL,
-				setSuccess,
-				setLoading
-			);
-		} else {
-			setLoading(false);
-			errorMessage("User already registered ❌");
-		}
-	}
+  setLoading(true);
+  const passcode = generateID();
+  const eventRef = doc(db, "events", event_id);
+  const eventSnap = await getDoc(eventRef);
+  let firebaseEvent = {};
+  if (eventSnap.exists()) {
+    firebaseEvent = eventSnap.data();
+    const attendees = firebaseEvent.attendees;
+    const result = attendees.filter((item) => item.email === email);
+    if (result.length === 0 && firebaseEvent.disableRegistration === false) {
+      await updateDoc(eventRef, {
+        attendees: arrayUnion({
+          name,
+          email,
+          passcode,
+          trans, // Include trans here
+        }),
+      });
+      // Removed the sendEmail function call here
+      setLoading(false);
+      setSuccess("Registration successful ✅");
+    } else {
+      setLoading(false);
+      errorMessage("User already registered ❌");
+    }
+  }
 };
 
 export const deleteEvent = async (id) => {
