@@ -19,7 +19,7 @@ const Ticket = () => {
     e.preventDefault();
 
     // Use backticks to create a template string
-    router.push(`/ticket/${query.id}/${email}/${query.slug}`);
+    router.push(`/ticket/`);
   };
 
 
