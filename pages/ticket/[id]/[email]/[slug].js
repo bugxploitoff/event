@@ -32,8 +32,8 @@ const TicketPage = ({ event }) => {
   const [email, setEmail] = useState("");
   const [trans, setTrans] = useState("");
   const { query } = useRouter();
-  console.log(query);
-  console.log(event.attendees[0].email);
+  const attendeeIndex = event.attendees.findIndex((attendee) => attendee.email === 'snath2973@gmail.com');
+  console.log(attendeeIndex)
 
   const handleSubmit = (e) => {
     e.preventDefault();
