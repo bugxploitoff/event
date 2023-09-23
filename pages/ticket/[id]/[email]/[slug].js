@@ -17,7 +17,6 @@ export async function getServerSideProps(context) {
   let firebaseEvent = {};
   if (docSnap.exists()) {
     firebaseEvent = docSnap.data();
-    console.log(firebaseEvent);
   } else {
     console.log("No such document!");
   }
@@ -34,6 +33,7 @@ const TicketPage = ({ event }) => {
   const [trans, setTrans] = useState("");
   const { query } = useRouter();
   console.log(query);
+  console.log(event);
 
   const handleSubmit = (e) => {
     e.preventDefault();
