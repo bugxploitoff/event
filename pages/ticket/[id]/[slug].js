@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { FaUserAlt } from "react-icons/fa";
-import { HiMail } from "react-icons/hi";
+import { HiMail, HiCalendar } from "react-icons/hi";
 import { doc, getDoc } from "@firebase/firestore";
 import db from "../../../utils/firebase";
 import { registerAttendee } from "../../../utils/util";
@@ -104,6 +104,7 @@ const TicketPage = ({ event }) => {
               />
               
             </div>
+                  <HiCalendar className=" absolute left-4 top-3 text-gray-300 text-xl" />
                      <label htmlFor="email">time</label>
             <div className="w-full relative">
               <input
