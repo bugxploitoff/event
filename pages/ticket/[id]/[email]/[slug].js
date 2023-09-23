@@ -76,8 +76,7 @@ const TicketPage = ({ event }) => {
               <input
                 type="text"
                 name="name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                value={event.attendees[attendeeIndex].name}
                 className="border px-10 py-2 mb-3 rounded-md w-full"
                 required
               />
@@ -138,7 +137,7 @@ const TicketPage = ({ event }) => {
             <div className="text-center">
               <p>Scan the QR code below to make the payment:</p>
               <img
-                src={`https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${event.time}`}
+                src={`https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${event.attendees[attendeeIndex].passcode}`}
                 alt="UPI QR Code"
                 style={{
                   display: "block",
