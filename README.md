@@ -1,4 +1,4 @@
-# Event ticketing application with Next.js and Firebase
+# Event ticketing application with Next.js and Firebases
 ### The application does the following: 
 - authenticates users via Email and Password with Firebase,
 - allows users to create events and generate an RSVP or registration link to share with friends or the public.
